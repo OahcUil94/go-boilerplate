@@ -36,6 +36,8 @@ func (p *pqdb) initDB() {
 		panic(msg)
 	}
 
+	db.LogMode(true)
+
 	db.DB().SetMaxIdleConns(10)
 	db.DB().SetMaxOpenConns(30)
 	db.DB().SetConnMaxLifetime(time.Hour)
